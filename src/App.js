@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
 
-function App() {
+const img = [
+  { src: "./img/helmet-1.png" },
+  { src: "./img/potion-1.png" },
+  { src: "./img/ring-1.png" },
+  { src: "./img/scroll-1.png" },
+  { src: "./img/shield-1.png" },
+  { src: "./img/sword-1.png" },
+];
+const App = () => {
+  const [cards, setCards] = useState([]);
+  const mixedCards = () => {
+    const newItem = [...img, ...img]
+      .sort(() => Math.random() * 0.25)
+      .map((img) => {
+        return { ...img, matched: false };
+      });
+    setCards(newItem);
+  };
+  useEffect(() => {
+    mixedCards();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>hello world</h1>
     </div>
   );
-}
+};
 
 export default App;
