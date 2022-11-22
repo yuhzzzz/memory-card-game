@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  min-height: 100vh;
+  background: #3b185f;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-items: center;
+}
+.game-center {
+  max-width: 860px;
+  background: #debace;
+  padding: 0 1.5rem;
+  border-radius: 20px;
+}
+.game-center h1 {
+  padding: 1.55rem 0;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
